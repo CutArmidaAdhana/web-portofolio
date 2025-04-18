@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="Web portofolio tailwind" />
+    <meta name="keyword" content="tailwindcss, CSS, tailwind" />
+    <meta name="author" content="CutArmidaAdhana" />
+    <title>Web Portofolio</title>
+    <link rel="stylesheet" type="text/css" href="output.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+      .gradient {
+        background-image: linear-gradient(to bottom right, #ddcfd5, #f34d8f);
+      }
+
+      .gradient-skill {
+        background-image: linear-gradient(#f34d8f, #ebc5d4);
+      }
+
+      .gradient-bottom {
+        background-image: linear-gradient(#f34d8f, #ebc5d4);
+      }
+
+      .fade-up {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 1s ease;
+      }
+
+      .show {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+      }
+
+      @keyframes float {
+        0%, 100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+    
+      .floating-love {
+        animation: float 2s ease-in-out infinite;
+      }
+
+      @keyframes typing {
+        0% {
+          width: 0;
+        }
+        100% {
+          width: 100%;
+        }
+      }
+    
+      @keyframes blink {
+        50% {
+          border-color: transparent;
+        }
+      }
+    
+      .typing-text {
+        display: inline-block;
+        overflow: hidden;
+        white-space: nowrap;
+        animation: typing 3s steps(30) infinite, blink 0.75s step-end infinite;
+      }
+
+      .flying-loves {
+        position: static;
+        top: 80;
+        width: 100%;
+        height: 100%;
+        pointer-events: none; /* Love emoji tidak mengganggu interaksi */
+      }
+    
+      .love {
+        position: absolute;
+        font-size: 4rem; /* Ukuran emoji */
+        color: #F37199; /* Warna pink */
+        animation: fly 6s linear infinite, drift 4s ease-in-out infinite;
+      }
+    
+      /* Animasi jatuh dan melayang ke berbagai arah */
+      @keyframes fly {
+        0% {
+          transform: translateY(-100px) translateX(0);
+        }
+        100% {
+          transform: translateY(100vh) translateX(100px);
+        }
+      }
+    
+      /* Animasi mengayun ke kiri dan kanan */
+      @keyframes drift {
+        0%, 100% {
+          transform: translateX(0);
+        }
+        50% {
+          transform: translateX(-100px); /* Gerakan ke kiri */
+        }
+      }
+    
+      .love:nth-child(1) {
+        animation-delay: 0s;
+        left: 10%;
+      }
+    
+      .love:nth-child(2) {
+        animation-delay: 1s;
+        left: 30%;
+      }
+    
+      .love:nth-child(3) {
+        animation-delay: 2s;
+        left: 50%;
+      }
+    
+      .love:nth-child(4) {
+        animation-delay: 1.5s;
+        left: 70%;
+      }
+    
+      .love:nth-child(5) {
+        animation-delay: 0.5s;
+        left: 90%;
+      }
+
+      @keyframes scrollLeft {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-100%);
+        }
+      }
+      
+      #certificateContainer {
+        display: flex;
+        gap: 16px;
+        animation: scrollLeft 10s linear infinite;
+      }
+      
+      #certificateContainer img {
+        height: 160px; /* Gambar dengan tinggi tetap */
+        width: 240px; /* Gambar dengan lebar tetap */
+        object-fit: cover;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        transition: transform 0.3s ease;
+      }
+      
+      #certificateContainer img:hover {
+        transform: scale(1.05);
+      }
+      
+      /* Scrollbar customization */
+      .scrollbar-thin {
+        scrollbar-width: thin;
+        scrollbar-color: #f5a0b3 #fbe4f2;
+      }
+      
+      .scrollbar-thumb-pink-400 {
+        background-color: #f5a0b3;
+      }
+      
+      .scrollbar-track-pink-100 {
+        background-color: #fbe4f2;
+      }
+      
+      @keyframes glow {
+        0% { box-shadow: 0 0 5px #f472b6, 0 0 10px #f472b6; }
+        50% { box-shadow: 0 0 20px #ec4899, 0 0 30px #ec4899; }
+        100% { box-shadow: 0 0 5px #f472b6, 0 0 10px #f472b6; }
+      }
+      .glow-button {
+        animation: glow 2s infinite;
+      }
+
+      
+      
+    </style>
+  </head>
+  <body>
+    
+    <!-- Section Navbar -->
+<section class="fixed top-0 left-0 w-full bg-white shadow-md z-50">
+    <nav class="max-w-screen-xl mx-auto px-6 md:px-16 py-6 flex items-center justify-between">
+      <!-- Logo -->
+      <div class="text-pink-500 text-2xl font-semibold font-[cursive]">
+        Cut Armida Adhana
+      </div>
+      <!-- Menu (bisa kosong dulu kalau perlu) -->
+      <div class="hidden md:flex gap-6 text-lg font-semibold font-[cursive]">
+        <a href="#home" class="hover:text-pink-500 transition">Home</a>
+        <a href="#about" class="hover:text-pink-500 transition">About Me</a>
+        <a href="#certificate" class="hover:text-pink-500 transition">Certificate</a>
+        <a href="#project" class="hover:text-pink-500 transition">Project</a>
+        <a href="#contact" class="hover:text-pink-500 transition">Contact Me</a>
+      </div>
+    </nav>
+  </section>
+  
+
+  <!-- Section Home -->
+  <section id="home" class="pt-[96px] w-full min-h-screen bg-gradient-to-r from-pink-100 to-white">
+    <div class="max-w-screen-xl mx-auto px-6 md:px-16 flex flex-col md:flex-row items-center justify-between gap-8">
+  
+      <!-- Teks -->
+      <div class="w-full md:w-1/2 text-left relative">
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4 flex items-center gap-2">
+          Cut Armida Adhana
+          <span class="text-pink-400 text-3xl md:text-4xl floating-love">💗</span>
+        </h2>
+        <p class="text-2xl md:text-3xl font-semibold text-pink-700 typing-text">
+          Front End Developer
+        </p>        
+  
+        <!-- Ikon Sosial Media -->
+        <div class="flex justify-left gap-6 mb-4 mt-4">
+          <a href="https://www.facebook.com/Cut Armida Adhana" target="_blank" class="text-pink-500 hover:text-pink-700 transition">
+            <i class="fa-brands fa-facebook fa-2x"></i>
+          </a>
+          <a href="https://www.tiktok.com/@cutarmidaadhanaa" target="_blank" class="text-pink-500 hover:text-pink-700 transition">
+            <i class="fa-brands fa-tiktok fa-2x"></i>
+          </a>
+          <a href="https://www.instagram.com/ctrmdhn_" target="_blank" class="text-pink-500 hover:text-pink-700 transition">
+            <i class="fa-brands fa-instagram fa-2x"></i>
+          </a>
+        </div>
+  
+        <!-- Tombol Download CV -->
+        <a href="file/CV_CutArmida.pdf" download
+   class="glow-button relative inline-block px-6 py-3 font-bold text-white rounded-full group mt-6">
+  <span class="absolute inset-0 w-full h-full transition duration-300 ease-out transform translate-x-1 translate-y-1 bg-pink-300 rounded-full group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
+  <span class="absolute inset-0 w-full h-full bg-pink-500 rounded-full border-2 border-white group-hover:border-pink-700"></span>
+  <span class="relative">📄 Download CV</span>
+</a>
+
+
+      </div>
+  
+      <!-- Gambar -->
+      <div class="w-full md:w-1/2 relative">
+        <img src="img/foto2.jpeg" alt="Foto" class="w-full h-full object-cover rounded-xl shadow-lg opacity-60" />
+        <div class="absolute inset-0 bg-white/40 rounded-xl"></div>
+      </div>
+    </div>
+  
+    <div class="flying-loves">
+      <span class="love">&hearts;</span>
+      <span class="love">&hearts;</span>
+      <span class="love">&hearts;</span>
+      <span class="love">&hearts;</span>
+      <span class="love">&hearts;</span>
+    </div>
+  </section>
+  
+  <!-- End Section Home -->
+       
+  <!-- Section About -->
+<section id="about" class="w-screen min-h-screen flex flex-col items-center justify-center px-6 md:px-16 py-12 bg-gradient-to-r from-pink-100 to-white text-center relative overflow-hidden fade-up">
+  <div class="max-w-3xl z-10 relative">
+    <h2 class="text-4xl md:text-5xl font-extrabold text-pink-700 mb-4 tracking-wide">About Me</h2>
+    <p class="text-lg text-black-700 mb-6">
+      Saya adalah seorang Front-End Developer yang berfokus pada pembuatan dan pengembangan antarmuka website yang menarik,
+      responsif, dan fungsional. Dengan keahlian dalam HTML, CSS, dan JavaScript, saya membangun pengalaman pengguna yang
+      intuitif dan nyaman digunakan di berbagai perangkat.
+    </p>
+    <p class="text-lg text-black-700 mb-6">
+      Saya terbiasa menggunakan framework modern seperti React, Vue, Alpine, dan Astro untuk mempercepat proses pengembangan dan
+      memastikan struktur kode tetap efisien serta mudah di-maintain. Dalam setiap proyek, saya juga mengutamakan integrasi API
+      secara efektif serta memastikan desain tetap konsisten dengan prinsip user experience (UX) yang baik.
+    </p>
+    <p class="text-lg text-black-700">
+      Selain itu, saya juga fokus pada pengoptimalan performa website, mulai dari kecepatan loading hingga efisiensi resource.
+      Tujuan saya adalah menciptakan tampilan yang tidak hanya menarik secara visual, tetapi juga cepat, ringan, dan mampu
+      meningkatkan keterlibatan pengguna secara keseluruhan.
+    </p>
+  </div>
+
+  <!-- Animasi Love Emoji Berterbangan -->
+  <div class="flying-loves">
+    <span class="love">&hearts;</span>
+    <span class="love">&hearts;</span>
+    <span class="love">&hearts;</span>
+    <span class="love">&hearts;</span>
+    <span class="love">&hearts;</span>
+  </div>
+</section>
+<!-- End Section About -->
+
+<!-- Section Certificate -->
+<section id="certificate" class="w-screen min-h-screen flex flex-col items-center justify-center px-6 md:px-16 py-12 bg-gradient-to-r from-pink-100 to-pink-200 text-center">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-4xl md:text-5xl font-extrabold text-pink-700 mb-4 tracking-wide"> My Certificates <span class="text-pink-400 text-3xl md:text-4xl floating-love">💗</span></h2>
+    <div class="h-1 w-24 mx-auto bg-pink-400 rounded-full mb-10"></div>
+
+    <!-- Certificate Carousel -->
+    <div class="relative">
+      <div class="overflow-x-auto flex gap-6 snap-x snap-mandatory pb-4 scroll-smooth px-2">
+        <!-- Certificate Cards (Example: 3 shown here, repeat for 25) -->
+        <img src="img/1.jpg" alt="Sertifikat 1" onclick="openModal(this.src)" class="h-48 w-72 object-cover rounded-3xl shadow-xl border-4 border-white cursor-pointer snap-center hover:scale-105 hover:rotate-1 transition duration-500 ease-in-out" />
+        <img src="img/2.jpg" alt="Sertifikat 2" onclick="openModal(this.src)" class="h-48 w-72 object-cover rounded-3xl shadow-xl border-4 border-white cursor-pointer snap-center hover:scale-105 hover:-rotate-1 transition duration-500 ease-in-out" />
+        <img src="img/3.jpg" alt="Sertifikat 3" onclick="openModal(this.src)" class="h-48 w-72 object-cover rounded-3xl shadow-xl border-4 border-white cursor-pointer snap-center hover:scale-105 hover:rotate-2 transition duration-500 ease-in-out" />
+        <img src="img/4.jpg" alt="Sertifikat 3" onclick="openModal(this.src)" class="h-48 w-72 object-cover rounded-3xl shadow-xl border-4 border-white cursor-pointer snap-center hover:scale-105 hover:rotate-2 transition duration-500 ease-in-out" />
+        <img src="img/5.jpg" alt="Sertifikat 3" onclick="openModal(this.src)" class="h-48 w-72 object-cover rounded-3xl shadow-xl border-4 border-white cursor-pointer snap-center hover:scale-105 hover:rotate-2 transition duration-500 ease-in-out" />
+        <img src="img/6.jpg" alt="Sertifikat 3" onclick="openModal(this.src)" class="h-48 w-72 object-cover rounded-3xl shadow-xl border-4 border-white cursor-pointer snap-center hover:scale-105 hover:rotate-2 transition duration-500 ease-in-out" />
+        <img src="img/7.jpg" alt="Sertifikat 3" onclick="openModal(this.src)" class="h-48 w-72 object-cover rounded-3xl shadow-xl border-4 border-white cursor-pointer snap-center hover:scale-105 hover:rotate-2 transition duration-500 ease-in-out" />
+        <img src="img/8.jpg" alt="Sertifikat 3" onclick="openModal(this.src)" class="h-48 w-72 object-cover rounded-3xl shadow-xl border-4 border-white cursor-pointer snap-center hover:scale-105 hover:rotate-2 transition duration-500 ease-in-out" />
+        <img src="img/9.jpg" alt="Sertifikat 3" onclick="openModal(this.src)" class="h-48 w-72 object-cover rounded-3xl shadow-xl border-4 border-white cursor-pointer snap-center hover:scale-105 hover:rotate-2 transition duration-500 ease-in-out" />
+        <img src="img/10.jpg" alt="Sertifikat 3" onclick="openModal(this.src)" class="h-48 w-72 object-cover rounded-3xl shadow-xl border-4 border-white cursor-pointer snap-center hover:scale-105 hover:rotate-2 transition duration-500 ease-in-out" />
+        <img src="img/11.jpg" alt="Sertifikat 3" onclick="openModal(this.src)" class="h-48 w-72 object-cover rounded-3xl shadow-xl border-4 border-white cursor-pointer snap-center hover:scale-105 hover:rotate-2 transition duration-500 ease-in-out" />
+        <img src="img/12.jpg" alt="Sertifikat 3" onclick="openModal(this.src)" class="h-48 w-72 object-cover rounded-3xl shadow-xl border-4 border-white cursor-pointer snap-center hover:scale-105 hover:rotate-2 transition duration-500 ease-in-out" />
+        <img src="img/13.jpg" alt="Sertifikat 3" onclick="openModal(this.src)" class="h-48 w-72 object-cover rounded-3xl shadow-xl border-4 border-white cursor-pointer snap-center hover:scale-105 hover:rotate-2 transition duration-500 ease-in-out" />
+        <img src="img/14.jpg" alt="Sertifikat 3" onclick="openModal(this.src)" class="h-48 w-72 object-cover rounded-3xl shadow-xl border-4 border-white cursor-pointer snap-center hover:scale-105 hover:rotate-2 transition duration-500 ease-in-out" />
+        <img src="img/15.jpg" alt="Sertifikat 3" onclick="openModal(this.src)" class="h-48 w-72 object-cover rounded-3xl shadow-xl border-4 border-white cursor-pointer snap-center hover:scale-105 hover:rotate-2 transition duration-500 ease-in-out" />
+        <img src="img/16.jpg" alt="Sertifikat 3" onclick="openModal(this.src)" class="h-48 w-72 object-cover rounded-3xl shadow-xl border-4 border-white cursor-pointer snap-center hover:scale-105 hover:rotate-2 transition duration-500 ease-in-out" />
+        <img src="img/17.jpg" alt="Sertifikat 3" onclick="openModal(this.src)" class="h-48 w-72 object-cover rounded-3xl shadow-xl border-4 border-white cursor-pointer snap-center hover:scale-105 hover:rotate-2 transition duration-500 ease-in-out" />
+        <img src="img/18.jpg" alt="Sertifikat 3" onclick="openModal(this.src)" class="h-48 w-72 object-cover rounded-3xl shadow-xl border-4 border-white cursor-pointer snap-center hover:scale-105 hover:rotate-2 transition duration-500 ease-in-out" />
+        <img src="img/19.jpg" alt="Sertifikat 3" onclick="openModal(this.src)" class="h-48 w-72 object-cover rounded-3xl shadow-xl border-4 border-white cursor-pointer snap-center hover:scale-105 hover:rotate-2 transition duration-500 ease-in-out" />
+        <img src="img/20.jpg" alt="Sertifikat 3" onclick="openModal(this.src)" class="h-48 w-72 object-cover rounded-3xl shadow-xl border-4 border-white cursor-pointer snap-center hover:scale-105 hover:rotate-2 transition duration-500 ease-in-out" />
+        <img src="img/21.jpg" alt="Sertifikat 3" onclick="openModal(this.src)" class="h-48 w-72 object-cover rounded-3xl shadow-xl border-4 border-white cursor-pointer snap-center hover:scale-105 hover:rotate-2 transition duration-500 ease-in-out" />
+        <img src="img/22.jpg" alt="Sertifikat 3" onclick="openModal(this.src)" class="h-48 w-72 object-cover rounded-3xl shadow-xl border-4 border-white cursor-pointer snap-center hover:scale-105 hover:rotate-2 transition duration-500 ease-in-out" />
+        <img src="img/23.jpg" alt="Sertifikat 3" onclick="openModal(this.src)" class="h-48 w-72 object-cover rounded-3xl shadow-xl border-4 border-white cursor-pointer snap-center hover:scale-105 hover:rotate-2 transition duration-500 ease-in-out" />
+        <img src="img/24.jpg" alt="Sertifikat 3" onclick="openModal(this.src)" class="h-48 w-72 object-cover rounded-3xl shadow-xl border-4 border-white cursor-pointer snap-center hover:scale-105 hover:rotate-2 transition duration-500 ease-in-out" />
+        <img src="img/25.jpg" alt="Sertifikat 3" onclick="openModal(this.src)" class="h-48 w-72 object-cover rounded-3xl shadow-xl border-4 border-white cursor-pointer snap-center hover:scale-105 hover:rotate-2 transition duration-500 ease-in-out" />
+      </div>
+    </div>
+    <div class="flying-loves">
+      <span class="love">&hearts;</span>
+      <span class="love">&hearts;</span>
+      <span class="love">&hearts;</span>
+      <span class="love">&hearts;</span>
+      <span class="love">&hearts;</span>
+    </div>
+  </div>
+
+  <!-- Modal Overlay -->
+  <div id="modal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 hidden">
+    <div class="bg-white rounded-xl p-4 max-w-3xl relative border-4 border-pink-300">
+      <button onclick="closeModal()" class="absolute top-2 right-2 text-pink-500 hover:text-pink-700 text-3xl font-bold">&times;</button>
+      <img id="modal-img" src="" alt="Full Certificate" class="w-full h-auto rounded-lg" />
+    </div>
+  </div>
+</section>
+
+<!-- Script untuk render otomatis -->
+<script>
+  // Data gambar & judul sertifikat
+  const certificates = [
+    { src: 'img/1.jpg', title: 'Frontend Developer Certificate' },
+    { src: 'img/2.jpg', title: 'Tailwind CSS Certificate' },
+    { src: 'img/3.jpg', title: 'Responsive Web Design' },
+    { src: 'img/4.jpg', title: 'React Fundamentals' },
+    { src: 'img/5.jpg', title: 'JavaScript Mastery' },
+    { src: 'img/6.jpg', title: 'Vue.js Beginner' },
+    { src: 'img/7.jpg', title: 'Alpine.js Basics' },
+    { src: 'img/8.jpg', title: 'HTML & CSS Proficiency' },
+    { src: 'img/9.jpg', title: 'Advanced Web Layouts' },
+    { src: 'img/10.jpg', title: 'REST API Integration' },
+    { src: 'img/11.jpg', title: 'Performance Optimization' },
+    { src: 'img/12.jpg', title: 'Portfolio Completion' },
+    { src: 'img/13.jpg', title: 'Design Thinking' },
+    { src: 'img/14.jpg', title: 'UI/UX Principles' },
+    { src: 'img/15.jpg', title: 'Git & GitHub Basics' },
+    { src: 'img/16.jpg', title: 'Web Accessibility' },
+    { src: 'img/17.jpg', title: 'Netlify Deployment' },
+    { src: 'img/18.jpg', title: 'Astro Framework' },
+    { src: 'img/19.jpg', title: 'Freelance Ready' },
+    { src: 'img/20.jpg', title: 'Team Collaboration' },
+    { src: 'img/21.jpg', title: 'Dark Mode Implementation' },
+    { src: 'img/22.jpg', title: 'CSS Animations' },
+    { src: 'img/23.jpg', title: 'HTML Semantics' },
+    { src: 'img/24.jpg', title: 'Forms & Validations' },
+    { src: 'img/25.jpg', title: 'Final Project Showcase' },
+  ];
+
+  // Render otomatis ke container
+  const container = document.getElementById('certificateContainer');
+
+  certificates.forEach(cert => {
+    const img = document.createElement('img');
+    img.src = cert.src;
+    img.alt = cert.title;
+    img.className = 'h-32 cursor-pointer rounded shadow-md hover:scale-105 transition-transform';
+    img.onclick = () => showModal(cert.title, cert.src);
+    container.appendChild(img);
+  });
+
+  // Modal handler
+  function showModal(title, imgSrc) {
+    document.getElementById('modalTitle').textContent = title;
+    document.getElementById('modalImage').src = imgSrc;
+    document.getElementById('modal').classList.remove('hidden');
+  }
+
+  function closeModal() {
+    document.getElementById('modal').classList.add('hidden');
+  }
+
+  // Tutup modal saat klik area luar
+  document.getElementById('modal').addEventListener('click', function (e) {
+    if (e.target.id === 'modal') {
+      closeModal();
+    }
+  });
+</script>
+
+    <!-- Section Portofolio-->
+    <section id="project" class="w-screen min-h-screen flex flex-col items-center justify-center px-6 md:px-16 py-12 bg-gradient-to-r from-pink-200 to-pink-100 text-center fade-up">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-4xl md:text-5xl font-extrabold text-pink-600 mb-4 tracking-wide sprinkle-text">
+          My Project
+        </h2>        
+        <div class="h-1 w-24 mx-auto bg-pink-500 rounded-full mb-8"></div>
+    
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          <!-- Portfolio Item 1 -->
+          <div class="max-w-sm bg-pink-300 p-6 mx-auto text-center rounded-xl shadow-lg transform transition duration-500 hover:scale-105 hover:shadow-2xl">
+            <img src="img/sushi.jpg" alt="Website E-commerce" class="mx-auto mb-4 rounded-lg h-48 w-full object-cover shadow-lg" />
+            <p class="font-bold text-lg md:text-xl mb-4 text-pink-900">Sushi Website</p>
+            <a href="https://cutarmidaadhana.github.io/sushi-website/" target="_blank" class="inline-block">
+              <button class="bg-pink-500 hover:bg-pink-700 text-white font-bold px-6 py-2 shadow-md rounded-full transform transition duration-300 hover:scale-110">
+                Lihat Project
+              </button>
+            </a>
+          </div>          
+    
+          <!-- Portfolio Item 2 -->
+          <div class="max-w-sm bg-pink-300 p-6 mx-auto text-center rounded-xl shadow-lg transform transition duration-500 hover:scale-105 hover:shadow-2xl">
+            <img src="img/img1.jpg" alt="Website Berita" class="mx-auto mb-4 rounded-lg h-48 w-full object-cover shadow-lg" />
+            <p class="font-bold text-lg md:text-xl mb-4 text-pink-900">Website Berita</p>
+            <button class="bg-pink-500 hover:bg-pink-700 text-white font-bold px-6 py-2 shadow-md rounded-full transform transition duration-300 hover:scale-110">
+              Lihat Project
+            </button>
+          </div>
+    
+          <!-- Portfolio Item 3 -->
+          <div class="max-w-sm bg-pink-300 p-6 mx-auto text-center rounded-xl shadow-lg transform transition duration-500 hover:scale-105 hover:shadow-2xl">
+            <img src="img/img1.jpg" alt="Website Berita" class="mx-auto mb-4 rounded-lg h-48 w-full object-cover shadow-lg" />
+            <p class="font-bold text-lg md:text-xl mb-4 text-pink-900">Website Berita</p>
+            <button class="bg-pink-500 hover:bg-pink-700 text-white font-bold px-6 py-2 shadow-md rounded-full transform transition duration-300 hover:scale-110">
+              Lihat Project
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+          
+    <!-- End Section Portofolio -->
+
+    <!-- Section Contact -->
+    <section id="contact" class="gradient-bottom pt-16 pb-16 fade-up">
+      <h1 class="w-full my-2 text-5xl font-bold text-center text-white">Contact me</h1>
+      <div class="mb-4">
+        <div class="h-1 mx-auto bg-pink-500 w-2/3 md:w-1/6 opacity-75 my-0 py-0 rounded"></div>
+      </div>
+      <div class="container p-4 mb-6 w-full lg:w-1/2 shadow-lg rounded-lg bg-gray-200 mx-auto">
+        <form class="p-5 lg:p-10 text-center">
+          <h4 class="text-2xl font-semibold mb-6">Ingin menghubungi saya?</h4>
+          <div class="w-full mb-6">
+            <label class="uppercase text-gray-600 text-xs font-bold">Nama Lengkap</label>
+            <input type="text" class="mt-2 px-3 py-3 placeholder-gray-500 text-gray-600 bg-white rounded text-sm shadow w-full" placeholder="Nama Lengkap" />
+          </div>
+          <div class="w-full mb-6">
+            <label class="uppercase text-gray-600 text-xs font-bold">Email</label>
+            <input type="email" class="mt-2 px-3 py-3 placeholder-gray-500 text-gray-600 bg-white rounded text-sm shadow w-full" placeholder="Email" />
+          </div>
+          <div class="w-full mb-6">
+            <label class="uppercase text-gray-600 text-xs font-bold">Pesan</label>
+            <textarea rows="4" class="mt-2 px-3 py-3 placeholder-gray-500 text-gray-600 bg-white rounded text-sm shadow w-full" placeholder="Tuliskan pesan ..."></textarea>
+          </div>
+          <div class="mt-6">
+            <button class="bg-pink-500 hover:bg-pink-700 text-white font-bold px-4 py-2 shadow-md rounded-tl-lg rounded-br-lg" type="submit">
+              Kirim pesan
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+    <!-- End Section Contact -->
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("show");
+              observer.unobserve(entry.target);
+            }
+          });
+        }, {
+          threshold: 0.1
+        });
+
+        document.querySelectorAll(".fade-up").forEach(el => observer.observe(el));
+      });
+
+      function openModal(src) {
+        const modal = document.getElementById('modal');
+        const modalImg = document.getElementById('modal-img');
+        modalImg.src = src;
+        modal.classList.remove('hidden');
+      }
+    
+      function closeModal() {
+        document.getElementById('modal').classList.add('hidden');
+      }
+    </script>
+  </body>
+</html>
