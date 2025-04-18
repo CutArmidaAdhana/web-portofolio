@@ -189,37 +189,67 @@
   <body>
     
     <!-- Section Navbar -->
-<section class="fixed top-0 left-0 w-full bg-white shadow-md z-50">
-    <nav class="max-w-screen-xl mx-auto px-6 md:px-16 py-6 flex items-center justify-between">
-      <!-- Logo -->
-      <div class="text-pink-500 text-2xl font-semibold font-[cursive]">
-        Cut Armida Adhana
+    <section class="fixed top-0 left-0 w-full bg-white shadow-md z-50">
+      <nav class="max-w-screen-xl mx-auto px-6 md:px-16 py-6 flex items-center justify-between">
+        <!-- Logo -->
+        <div class="text-pink-500 text-2xl font-semibold font-[cursive]">
+          Cut Armida Adhana
+        </div>
+    
+        <!-- Menu -->
+        <div class="hidden md:flex gap-6 text-lg font-semibold font-[cursive]" id="menu">
+          <a href="#home" class="hover:text-pink-500 transition">Home</a>
+          <a href="#about" class="hover:text-pink-500 transition">About Me</a>
+          <a href="#certificate" class="hover:text-pink-500 transition">Certificate</a>
+          <a href="#project" class="hover:text-pink-500 transition">Project</a>
+          <a href="#contact" class="hover:text-pink-500 transition">Contact Me</a>
+        </div>
+    
+        <!-- Burger Menu (Mobile) -->
+        <div class="md:hidden flex items-center" id="burger-menu">
+          <button class="text-pink-500" onclick="toggleMenu()">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+      </nav>
+    
+      <!-- Mobile Menu (Hidden by default) -->
+      <div class="md:hidden bg-white shadow-md w-full" id="mobile-menu" style="display: none;">
+        <div class="flex flex-col gap-6 text-lg font-semibold font-[cursive] p-6">
+          <a href="#home" class="hover:text-pink-500 transition">Home</a>
+          <a href="#about" class="hover:text-pink-500 transition">About Me</a>
+          <a href="#certificate" class="hover:text-pink-500 transition">Certificate</a>
+          <a href="#project" class="hover:text-pink-500 transition">Project</a>
+          <a href="#contact" class="hover:text-pink-500 transition">Contact Me</a>
+        </div>
       </div>
-      <!-- Menu (bisa kosong dulu kalau perlu) -->
-      <div class="hidden md:flex gap-6 text-lg font-semibold font-[cursive]">
-        <a href="#home" class="hover:text-pink-500 transition">Home</a>
-        <a href="#about" class="hover:text-pink-500 transition">About Me</a>
-        <a href="#certificate" class="hover:text-pink-500 transition">Certificate</a>
-        <a href="#project" class="hover:text-pink-500 transition">Project</a>
-        <a href="#contact" class="hover:text-pink-500 transition">Contact Me</a>
-      </div>
-    </nav>
-  </section>
+    </section>
+    
+    <script>
+      function toggleMenu() {
+        const menu = document.getElementById('mobile-menu');
+        const display = menu.style.display;
+        menu.style.display = display === 'none' || display === '' ? 'block' : 'none';
+      }
+    </script>
+    
   
 
   <!-- Section Home -->
-  <section id="home" class="pt-[96px] w-full min-h-screen bg-gradient-to-r from-pink-100 to-white">
-    <div class="max-w-screen-xl mx-auto px-6 md:px-16 flex flex-col md:flex-row items-center justify-between gap-8">
+  <section id="home" class="pt-[96px] w-full min-h-screen bg-gradient-to-r from-pink-100 to-white relative">
+    <div class="max-w-screen-xl mx-auto px-6 md:px-16 flex flex-col-reverse md:flex-row items-center justify-between gap-8">
   
       <!-- Teks -->
-      <div class="w-full md:w-1/2 text-left relative">
-        <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4 flex items-center gap-2">
+      <div class="w-full md:w-1/2 text-left relative mb-8 md:mb-0 z-10">
+        <h2 class="text-3xl md:text-5xl font-bold text-gray-800 mb-4 flex items-center gap-2 md:mb-6">
           Cut Armida Adhana
           <span class="text-pink-400 text-3xl md:text-4xl floating-love">💗</span>
         </h2>
-        <p class="text-2xl md:text-3xl font-semibold text-pink-700 typing-text">
+        <p class="text-xl md:text-3xl font-semibold text-pink-700 typing-text mb-4 md:mb-6">
           Front End Developer
-        </p>        
+        </p>
   
         <!-- Ikon Sosial Media -->
         <div class="flex justify-left gap-6 mb-4 mt-4">
@@ -235,14 +265,11 @@
         </div>
   
         <!-- Tombol Download CV -->
-        <a href="file/CV_CutArmida.pdf" download
-   class="glow-button relative inline-block px-6 py-3 font-bold text-white rounded-full group mt-6">
-  <span class="absolute inset-0 w-full h-full transition duration-300 ease-out transform translate-x-1 translate-y-1 bg-pink-300 rounded-full group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
-  <span class="absolute inset-0 w-full h-full bg-pink-500 rounded-full border-2 border-white group-hover:border-pink-700"></span>
-  <span class="relative">📄 Download CV</span>
-</a>
-
-
+        <a href="file/CV_CutArmida.pdf" download class="glow-button relative inline-block px-6 py-3 font-bold text-white rounded-full group mt-6">
+          <span class="absolute inset-0 w-full h-full transition duration-300 ease-out transform translate-x-1 translate-y-1 bg-pink-300 rounded-full group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
+          <span class="absolute inset-0 w-full h-full bg-pink-500 rounded-full border-2 border-white group-hover:border-pink-700"></span>
+          <span class="relative">📄 Download CV</span>
+        </a>
       </div>
   
       <!-- Gambar -->
@@ -252,7 +279,8 @@
       </div>
     </div>
   
-    <div class="flying-loves">
+    <!-- Animasi Love Emoji Berterbangan -->
+    <div class="flying-loves absolute top-0 left-0 right-0 bottom-0 pointer-events-none z-0">
       <span class="love">&hearts;</span>
       <span class="love">&hearts;</span>
       <span class="love">&hearts;</span>
@@ -261,11 +289,9 @@
     </div>
   </section>
   
-  <!-- End Section Home -->
-       
   <!-- Section About -->
 <section id="about" class="w-screen min-h-screen flex flex-col items-center justify-center px-6 md:px-16 py-12 bg-gradient-to-r from-pink-100 to-white text-center relative overflow-hidden fade-up">
-  <div class="max-w-3xl z-10 relative">
+  <div class="max-w-3xl z-10 relative mt-12"> <!-- Menambahkan margin atas -->
     <h2 class="text-4xl md:text-5xl font-extrabold text-pink-700 mb-4 tracking-wide">About Me</h2>
     <p class="text-lg text-black-700 mb-6">
       Saya adalah seorang Front-End Developer yang berfokus pada pembuatan dan pengembangan antarmuka website yang menarik,
@@ -284,27 +310,20 @@
     </p>
   </div>
 
-  <!-- Animasi Love Emoji Berterbangan -->
-  <div class="flying-loves">
-    <span class="love">&hearts;</span>
-    <span class="love">&hearts;</span>
-    <span class="love">&hearts;</span>
-    <span class="love">&hearts;</span>
-    <span class="love">&hearts;</span>
-  </div>
 </section>
 <!-- End Section About -->
 
-<!-- Section Certificate -->
-<section id="certificate" class="w-screen min-h-screen flex flex-col items-center justify-center px-6 md:px-16 py-12 bg-gradient-to-r from-pink-100 to-pink-200 text-center">
-  <div class="max-w-6xl mx-auto">
-    <h2 class="text-4xl md:text-5xl font-extrabold text-pink-700 mb-4 tracking-wide"> My Certificates <span class="text-pink-400 text-3xl md:text-4xl floating-love">💗</span></h2>
+<section id="certificate" class="w-screen min-h-screen flex flex-col items-center justify-center px-6 md:px-16 py-12 bg-gradient-to-r from-pink-100 to-white text-center relative overflow-hidden fade-up">
+  <div class="max-w-3xl z-10 relative mt-12"> <!-- max-w disamakan seperti about -->
+    <h2 class="text-4xl md:text-5xl font-extrabold text-pink-700 mb-4 tracking-wide">
+      My Certificates <span class="text-pink-400 text-3xl md:text-4xl floating-love">💗</span>
+    </h2>
     <div class="h-1 w-24 mx-auto bg-pink-400 rounded-full mb-10"></div>
 
     <!-- Certificate Carousel -->
     <div class="relative">
-      <div class="overflow-x-auto flex gap-6 snap-x snap-mandatory pb-4 scroll-smooth px-2">
-        <!-- Certificate Cards (Example: 3 shown here, repeat for 25) -->
+      <div class="overflow-x-auto flex gap-6 snap-x snap-mandatory pb-4 scroll-smooth px-2 justify-center">
+        <!-- Certificate Cards -->
         <img src="img/1.jpg" alt="Sertifikat 1" onclick="openModal(this.src)" class="h-48 w-72 object-cover rounded-3xl shadow-xl border-4 border-white cursor-pointer snap-center hover:scale-105 hover:rotate-1 transition duration-500 ease-in-out" />
         <img src="img/2.jpg" alt="Sertifikat 2" onclick="openModal(this.src)" class="h-48 w-72 object-cover rounded-3xl shadow-xl border-4 border-white cursor-pointer snap-center hover:scale-105 hover:-rotate-1 transition duration-500 ease-in-out" />
         <img src="img/3.jpg" alt="Sertifikat 3" onclick="openModal(this.src)" class="h-48 w-72 object-cover rounded-3xl shadow-xl border-4 border-white cursor-pointer snap-center hover:scale-105 hover:rotate-2 transition duration-500 ease-in-out" />
@@ -332,6 +351,8 @@
         <img src="img/25.jpg" alt="Sertifikat 3" onclick="openModal(this.src)" class="h-48 w-72 object-cover rounded-3xl shadow-xl border-4 border-white cursor-pointer snap-center hover:scale-105 hover:rotate-2 transition duration-500 ease-in-out" />
       </div>
     </div>
+
+    <!-- Dekorasi Hati -->
     <div class="flying-loves">
       <span class="love">&hearts;</span>
       <span class="love">&hearts;</span>
