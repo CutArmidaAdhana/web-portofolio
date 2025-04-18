@@ -1,51 +1,42 @@
-🌸 Cut Armida Adhana - My Portfolio 💗
-Hello! ✨
-Welcome to my cute and charming portfolio where I showcase my work as a Front-End Developer! I love combining clean, efficient code with beautiful, pastel designs. Here, you'll find some of my favorite projects and a peek into my creative world. 🌷💻
+# 🌸 **Cut Armida Adhana's Portfolio** 💻  
+### by **Cut Armida Adhana** 💗
 
-🌟 About Me
-Hi, I’m Cut Armida Adhana! 👋
-I’m a passionate Front-End Developer with a heart for creating beautiful and functional websites. I specialize in HTML, CSS, JavaScript, and frameworks like React, Vue, and Tailwind CSS. My goal is to bring designs to life in the most visually appealing and user-friendly way! 🌸✨
+Hi there~! Welcome to my **Portfolio Website** ✨  
+This is a cute and responsive landing page created with lots of 💕 love and attention to kawaii design! 🌷
 
-I’m a huge fan of all things kawaii (cute) and always looking for ways to blend creativity with technology. Let's make the web a cuter place together! 💖
+## 🍱 **About This Project**  
+This is my personal portfolio website, where I showcase my skills, projects, and achievements as a passionate Front-End Developer. Some highlights include:
+- Aesthetic pink & orange theme 🎨
+- Google Fonts (Dancing Script, Lora, and Poppins) for a lovely typography feel ✍️
+- Smooth scroll animation with AOS 🪄
+- Fully responsive design — works on all devices 📱💻
 
-🌈 What I Do
-Responsive Web Design — Creating websites that look beautiful on any device 📱💻
+## 💖 **Technologies Used**  
+- HTML5 + CSS3  
+- Bootstrap 4  
+- AOS (Animate on Scroll)  
+- FontAwesome + RemixIcons  
+- GitHub Pages for free hosting  
 
-Web Animations — Adding smooth animations to make websites interactive ✨
-
-UI/UX Design — Ensuring websites are intuitive, user-friendly, and aesthetically pleasing 🌟
-
-Front-End Development — Building websites with HTML, CSS, JavaScript, and modern frameworks 🎨
-
-📸 Featured Projects
-Here are a few of my favorite projects I’ve worked on:
-
-🍣 Sushi Website
-A cute and responsive landing page dedicated to all things sushi!
-
-Tech Used: HTML, CSS, AOS (Animate on Scroll), Google Fonts
-
-Live Demo: Sushi Website
+## 🌐 **Live Demo**  
+✨ Check out the live version of my portfolio here:  
+[https://CutArmidaAdhana.github.io/portfolio](https://CutArmidaAdhana.github.io/portfolio) 🍣
 
 
-🧁 Technologies & Tools I Love
-Languages: HTML5, CSS3, JavaScript
 
-Frameworks: React, Vue, Tailwind CSS, Bootstrap
+## 📸 **Preview**  
+![Portfolio Website Screenshot](portofolio.JPG)  
 
-Design Tools: Figma, Adobe XD
 
-Version Control: Git, GitHub
+## 🧁 **About Me**  
+I'm **Cut Armida Adhana**, a passionate Front-End Developer who loves to create beautiful, cute, and meaningful web experiences. 🌸  
+I enjoy combining clean code with playful design elements like pastel colors and smooth animations!  
 
-Hosting: GitHub Pages, Netlify
+Let’s connect! 💬  
+[🌷 Instagram](https://www.instagram.com/ctrmdhn_)  
+[🌸 TikTok](https://www.tiktok.com/@cutarmidaadhanaa)  
+[🌼 My Portfolio](https://CutArmidaAdhana.github.io/portfolio)
 
-💬 Let's Connect!
-Feel free to reach out to me if you want to collaborate on a project, ask questions, or just say hi! I’m always open to new opportunities and connections. 😊
+---
 
-🌷 Instagram :
-
-🌸 TikTok
-
-💌 Email
-
-🍡 Built with 💗 by Cut Armida Adhana
+> 🍡 Built with 💗 by Cut Armida Adhana
