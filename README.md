@@ -20,7 +20,7 @@ This is my personal portfolio website, where I showcase my skills, projects, and
 
 ## 🌐 **Live Demo**  
 ✨ Check out the live version of my portfolio here:  
-[https://CutArmidaAdhana.github.io/portfolio](https://cutarmidaadhana.github.io/web-portofolio/) 💖
+https://cutarmidaadhana.github.io/web-portofolio/ 💖
 
 
 
